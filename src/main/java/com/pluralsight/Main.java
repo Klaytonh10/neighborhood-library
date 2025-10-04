@@ -48,7 +48,7 @@ public class Main {
                 char thisKey = keyStroke.getCharacter();
                 switch (thisKey) {
                     case 'c':
-                        System.out.println("W");
+                        System.out.println("C");
                 }
 
             }
