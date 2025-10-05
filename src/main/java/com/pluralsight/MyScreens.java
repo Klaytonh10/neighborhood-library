@@ -1,15 +1,13 @@
 package com.pluralsight;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.input.KeyStroke;
-import com.googlecode.lanterna.input.KeyType;
 import com.googlecode.lanterna.screen.Screen;
 
 import java.io.IOException;
 
 public class MyScreens {
 
-    private String[] stringArr = {
+    private String[] homeStringArr = {
             "Welcome to your Neighborhood Library!",
             "Please Select One: ",
             "(C)Available Books",
@@ -17,10 +15,13 @@ public class MyScreens {
             "(X)Close Program"
     };
 
-    public MyScreens(String[] homeArr) {
-        this.stringArr = homeArr;
-    }
+    String[][] availableBookArr = {{},{},{},{}};
 
+    private String[] currentArr = homeStringArr;
+
+    public MyScreens(String[] currentArr) {
+        this.currentArr = currentArr;
+    }
 
 
     public void loadHomeScreen(Screen screen, TextGraphics textGraphics) throws IOException, InterruptedException {
@@ -28,17 +29,19 @@ public class MyScreens {
         //Home screen
         int textX = 20;
         int textY = 5;
-        for (int i = 0; i < stringArr.length; i++) {
+        for (int i = 0; i < homeStringArr.length; i++) {
 
-            for (int x = 0; x < stringArr[i].length(); x++) {
-                textGraphics.putString(x + textX, textY, String.valueOf(stringArr[i].charAt(x)));
+            for (int x = 0; x < homeStringArr[i].length(); x++) {
+                textGraphics.putString(x + textX, textY, String.valueOf(homeStringArr[i].charAt(x)));
                 Thread.sleep(80);
                 screen.refresh();
             }
             textY += 2;
         }
+    }
 
-
+    public void loadAvailableBooks() {
 
     }
+
 }

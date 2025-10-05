@@ -36,19 +36,21 @@ public class Main {
                 "(X)Close Program"
         };
 
-        MyScreens screens = new MyScreens(stringArr);
-        screens.loadHomeScreen(screen, textGraphics);
+        MyScreens myScreens = new MyScreens(stringArr);
+        myScreens.loadHomeScreen(screen, textGraphics);
         inputChar(screen);
     }
 
     public static void inputChar(Screen screen) throws IOException {
+        MyScreens myScreens;
+
         while (true) {
             KeyStroke keyStroke = screen.readInput();
             if (keyStroke.getKeyType() == KeyType.Character) {
                 char thisKey = keyStroke.getCharacter();
                 switch (thisKey) {
                     case 'c':
-                        System.out.println("C");
+
                 }
 
             }
